@@ -39,6 +39,7 @@ ORDER BY average_score DESC;
 -- summarize world rank by country
 SELECT country, AVG(world_rank) AS avg_world_rank, MIN(world_rank) AS best_world_rank
 FROM university_rankings
-GROUP BY country;
+GROUP BY country
+ORDER BY best_world_rank ASC;
 
 
