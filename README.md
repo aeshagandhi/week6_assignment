@@ -118,7 +118,7 @@ Below are the outputs of my exploration as described above:
     ```
 ![output](screenshots/exercise2.png)
 
-3. The database is updated to reflect the new calculation for the University of Oxford 2014 score.
+3. The database is updated to reflect the new calculation for the University of Oxford 2014 score by finding the row that matches Oxford in 2014 and incrementing the score by 1.2. All other rows will have the same calculation for score as before.
     ```sql
     UPDATE university_rankings
     SET score = score + 1.2
@@ -127,10 +127,10 @@ Below are the outputs of my exploration as described above:
     SELECT * FROM university_rankings
     WHERE institution = 'University of Oxford' AND year = 2014;
     ```
-The below output shows the updated score for this row. 
+The below output shows the updated score for this row which has been incremented by 1.2 from the previous score. 
 ![output](screenshots/exercise3.png)
 
-4. The database is updated to reflect where score < 45 AND year = 2015.
+4. The database is updated to not include rows where score < 45 AND year = 2015. Those rows are all deleted. 
     ```sql
     DELETE FROM university_rankings
     WHERE score < 45 AND year = 2015;
