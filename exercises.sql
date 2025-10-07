@@ -8,6 +8,15 @@ Country: USA
 World Rank: 350
 Score: 60.5  **/
 
+-- Uncomment / Delete everytime I re run this code
+-- DELETE FROM university_rankings
+-- WHERE institution = 'Duke Tech'
+--   AND country = 'USA'
+--   AND world_rank = 350
+--   AND score = 60.5
+--   AND year = 2014;
+
+
 INSERT INTO university_rankings (institution, country, world_rank, score, year)
 VALUES ('Duke Tech', 'USA', 350, 60.5, 2014);
 
@@ -35,7 +44,8 @@ WHERE institution = 'University of Oxford' AND year = 2014;
 
 /** Exercise 4: After reviewing, the ranking committee decided that universities with a score below 45 in 2015 should not have been included in the published dataset.
  Clean up the records to reflect this. **/
-UPDATE university_rankings
 DELETE FROM university_rankings
 WHERE score < 45 AND year = 2015;
 
+-- confirm query results that no such rows exist
+SELECT * FROM university_rankings WHERE score < 45 AND year = 2015;
